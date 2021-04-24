@@ -1,16 +1,56 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[sub_resource type="CubeMesh" id=5]
+[ext_resource path="res://Level_Gen/Trap_Trigger.gd" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
 
 [sub_resource type="BoxShape" id=4]
 
+[sub_resource type="SphereMesh" id=3]
+
 [node name="Tiles" type="Spatial"]
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 5 )
+[node name="ValidPath" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+[node name="StaticBody" type="StaticBody" parent="ValidPath"]
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="ValidPath/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Area" type="Area" parent="ValidPath"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ValidPath/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99544, 0 )
 shape = SubResource( 4 )
+
+[node name="Dead_Space" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Dead_Space"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Dead_Space/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Trap_Trigger" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Trap_Trigger"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Trap_Trigger/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Area" type="Area" parent="Trap_Trigger"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Trap_Trigger/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99544, 0 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Trap_Trigger/Area" to="Trap_Trigger" method="_on_Area_body_entered"]
