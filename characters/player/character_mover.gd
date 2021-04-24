@@ -1,12 +1,13 @@
 extends Spatial
 
 var body_to_move : KinematicBody = null
+var debug = true
 
 export var move_accel = 4
 export var max_speed = 25
 var drag = 0.0
-export var jump_force = 30
-export var gravity = 100
+export var jump_force = 0.6
+export var gravity = 9.81
 
 var pressed_jump = false
 var move_vec : Vector3
@@ -59,8 +60,8 @@ func _physics_process(delta):
 	if grounded:
 		self.velocity.y = -0.01
 	
-	if grounded and self.pressed_jump:
-		self.velocity.y = self.jump_force
+	if (grounded or debug) and self.pressed_jump:
+		self.velocity.y = self.jump_force*self.gravity
 		self.snap_vec = Vector3.ZERO
 	
 	else:

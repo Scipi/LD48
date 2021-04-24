@@ -21,3 +21,8 @@ script = ExtResource( 2 )
 
 [node name="health_manager" type="Spatial" parent="."]
 script = ExtResource( 3 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0167257, 0.788411, 0 )
+spot_range = 42.1428
+spot_angle = 7.04183

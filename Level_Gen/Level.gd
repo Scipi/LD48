@@ -1,17 +1,38 @@
 extends Spatial
 #https://www.youtube.com/watch?v=HRfqnxPm66Y
-var tile = preload("res://Level_Gen/Tiles.tscn")
+var tile = preload("res://Level_Gen/SimpleTile.fbx_Collection/Tiles_V2.tscn")
+var noise
 var rng
+var map_size = 50
+var map_height = 1
+var water_level = 0.03
 const dir = [Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN]
 
 func _init():
-	pass
+	if !rng:
+		rng = RandomNumberGenerator.new()
+	noise = OpenSimplexNoise.new()
+	noise.seed = rng.randi()
+	noise.octaves = 3
+	noise.period = 3.0
+	noise.persistence = 0.5
 	
 func _ready():
-	pass
-	
-func _physics_process(delta):
-	var pos = $player.get_translation()
-	print($GridMap.get_cell_item(pos.x,0,pos.y))
-	
-#	# Place tile
+	rng.randomize()
+	noise.seed = rng.randi()
+	var val
+	var walls = [0,0,0,0]
+	for x in range(-map_size,map_size):
+		for y in range(0,map_height):
+			for z in range(-map_size,map_size):
+				val = noise.get_noise_3d(x,y,z)
+				if noise.get_noise_3d(x,y,z) < water_level:
+					$GridMap.set_cell_item(x,y,z,0)
+				else:
+					$GridMap.set_cell_item(x,y,z,4)
+	var pos = $player.translation
+	pos = $GridMap.world_to_map(pos)
+	if $GridMap.get_cell_item(pos.x,pos.y,pos.z) == 4:
+		$player.transform.origin +=Vector3(0,100,0)
+		
+# Place tile
