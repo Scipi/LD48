@@ -14,7 +14,6 @@ config/name="LD48"
 config/icon="res://icon.png"
 
 [global]
-
 layer=false
 
 [input]
