@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cave Music with Tail.mp3-d4fb0d7572e7e05cacd4162fa32a5ceb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cave Music with Tail.mp3"
+dest_files=[ "res://.import/Cave Music with Tail.mp3-d4fb0d7572e7e05cacd4162fa32a5ceb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
