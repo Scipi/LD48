@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node",
-"class": "Run",
-"language": "GDScript",
-"path": "res://Level_Gen/Run.gd"
-} ]
-_global_script_class_icons={
-"Run": ""
-}
-
 [application]
 
 config/name="LD48"
