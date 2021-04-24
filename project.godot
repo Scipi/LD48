@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Artifacts",
+"language": "GDScript",
+"path": "res://Artifacts.gd"
+}, {
+"base": "Spatial",
+"class": "Dungeon_Floor",
+"language": "GDScript",
+"path": "res://Level.gd"
+}, {
+"base": "Node",
+"class": "Run",
+"language": "GDScript",
+"path": "res://Run.gd"
+}, {
+"base": "Spatial",
+"class": "Town",
+"language": "GDScript",
+"path": "res://Town.gd"
+} ]
+_global_script_class_icons={
+"Artifacts": "",
+"Dungeon_Floor": "",
+"Run": "",
+"Town": ""
+}
+
 [application]
 
 config/name="LD48"
@@ -19,5 +47,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES3"
 environment/default_environment="res://default_env.tres"
