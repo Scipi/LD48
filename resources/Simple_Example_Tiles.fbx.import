@@ -2,17 +2,17 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SimpleTile.fbx_Collection.fbx-460d3685e0c14a0cdc366823d0dbf63f.scn"
+path="res://.import/Simple_Example_Tiles.fbx-be38b78c761cbd3eed9955f28a9d74d4.scn"
 
 [deps]
 
-source_file="res://Level_Gen/SimpleTile.fbx_Collection/SimpleTile.fbx_Collection.fbx"
-dest_files=[ "res://.import/SimpleTile.fbx_Collection.fbx-460d3685e0c14a0cdc366823d0dbf63f.scn" ]
+source_file="res://resources/Simple_Example_Tiles.fbx"
+dest_files=[ "res://.import/Simple_Example_Tiles.fbx-be38b78c761cbd3eed9955f28a9d74d4.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Tiles_V2"
+nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
@@ -27,7 +27,7 @@ meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false
-animation/import=false
+animation/import=true
 animation/fps=15
 animation/filter_script=""
 animation/storage=false

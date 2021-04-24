@@ -1,6 +1,6 @@
 extends Spatial
 #https://www.youtube.com/watch?v=HRfqnxPm66Y
-var tile = preload("res://Level_Gen/SimpleTile.fbx_Collection/Tiles_V2.tscn")
+var tile = preload("res://Level_Gen/Tiles_V2.tscn")
 var noise
 var rng
 var map_size = 50
