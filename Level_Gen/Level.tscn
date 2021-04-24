@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level_Gen/Tiles.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://Level_Gen/Level.gd" type="Script" id=3]
+[ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=4]
+
+[node name="Dungeon_Floor" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 0, 65535, 0, 0, 0, 65535, 0, 65535, 65535, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.167415, 2.77882, -0.188204 )
