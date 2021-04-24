@@ -22,6 +22,7 @@ func _ready():
 	$character_mover.init(self)
 	$health_manager.init()
 	$health_manager.connect("dead", self, 'kill')
+	$Camera/weapon_manager.init($Camera/fire_point, [self])
 	
 
 func _process(_delta):
@@ -47,6 +48,11 @@ func _process(_delta):
 	$character_mover.set_move_vec(move_vec)
 	if Input.is_action_just_pressed("jump"):
 		$character_mover.jump()
+	
+	$Camera/weapon_manager.attack(
+		Input.is_action_just_pressed("attack"),
+		Input.is_action_pressed("attack")
+	)
 
 func _input(event):
 	if event is InputEventMouseMotion:

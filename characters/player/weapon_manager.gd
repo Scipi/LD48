@@ -5,9 +5,26 @@ onready var weapons = $weapons.get_children()
 var current_weapon_id = 1  # Sword
 var current_weapon = null
 
+var fire_point: Spatial
+var bodies_to_exclude: Array = []
+
+
+func init(_fire_point: Spatial, _bodies_to_exclude: Array):
+	self.fire_point = _fire_point
+	self.bodies_to_exclude = _bodies_to_exclude
+	for w in self.weapons:
+		if w.has_method("init"):
+			w.init(_fire_point, _bodies_to_exclude)
+	switch_weapon(1)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+
+func attack(attack_input_just_pressed: bool, attack_input_held: bool):
+	if self.current_weapon.has_method("attack"):
+		self.current_weapon.attack(attack_input_just_pressed, attack_input_held)
 
 
 func switch_weapon(id):
