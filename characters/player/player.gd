@@ -1,5 +1,17 @@
 extends KinematicBody
 
+var hotkeys = {
+	KEY_1: 0,
+	KEY_2: 1,
+	KEY_3: 2,
+	KEY_4: 3,
+	KEY_5: 4,
+	KEY_6: 5,
+	KEY_7: 6,
+	KEY_8: 7,
+	KEY_9: 8,
+	KEY_0: 9,
+}
 
 export var mouse_sens = 0.15
 
@@ -49,6 +61,16 @@ func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("quit"):
 			self.get_tree().quit(0)
+		
+		if event.pressed and event.scancode in self.hotkeys:
+			$Camera/weapon_manager.switch_weapon(self.hotkeys[event.scancode])
+	
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_WHEEL_UP:
+			$Camera/weapon_manager.prev_weapon()
+		if event.button_index == BUTTON_WHEEL_DOWN:
+			$Camera/weapon_manager.next_weapon()
+		
 
 func hurt(damage, dir):
 	$health_manager.hurt(damage, dir)
