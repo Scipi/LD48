@@ -15,7 +15,7 @@ func _ready():
 	init()
 	
 func init():
-	self.cur_health = self.max_health
+	self.cur_health = self.max_health - 5
 	emit_signal("health_changed", self.cur_health)
 
 func hurt(damage: int, _dir: Vector3):
@@ -44,4 +44,11 @@ func heal(amount: int):
 	
 	emit_signal("healed")
 	emit_signal("health_changed", self.cur_health)
+	
+	print(self.cur_health)
 
+
+func get_pickup(pickup_type, value):
+	match pickup_type:
+		Pickup.PICKUP_TYPES.HEALTH:
+			heal(value)

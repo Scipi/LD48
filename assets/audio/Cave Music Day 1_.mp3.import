@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cave Music Day 1_.mp3-462c0d00d75f55746bc0c27efec8036c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cave Music Day 1_.mp3"
+dest_files=[ "res://.import/Cave Music Day 1_.mp3-462c0d00d75f55746bc0c27efec8036c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
