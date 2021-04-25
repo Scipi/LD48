@@ -54,8 +54,9 @@ func attack(attack_input_just_pressed: bool, attack_input_held: bool):
 	for e in self.proj_emitters:
 		e.attack()
 	$proj_emitters.global_transform = start_transform
-	$AnimationPlayer.stop()
-	$AnimationPlayer.play("attack")
+	# $AnimationPlayer.stop()
+	# $AnimationPlayer.play("attack")
+	$AnimationTree["parameters/attack_os/active"] = true
 	emit_signal("fired")
 	self.can_attack = false
 	self.attack_timer.start()
@@ -67,5 +68,5 @@ func set_active():
 	show()
 
 func set_inactive():
-	$AnimationPlayer.play("idle")
+	$AnimationTree["parameters/attack_os/active"] = false
 	hide()
