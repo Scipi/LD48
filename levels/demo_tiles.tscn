@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://test.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/level.gd" type="Script" id=3]
+
+[node name="demo_level" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 10, 1, 10 )
+data = {
+"cells": PoolIntArray( 0, 0, 4, 65530, 0, 1441792, 65531, 0, 1048581, 65532, 0, 1048581, 65533, 0, 1048581, 65534, 0, 1441797, 65535, 0, 5, 65530, 1, 1441796, 65531, 1, 0, 65532, 1, 1441797, 65533, 1, 1048581, 65534, 1, 1048581, 65535, 1, 1048576, 65532, 2, 1441796, 65533, 2, 0, 65534, 2, 0, 65535, 2, 4, 65534, 65532, 1441793, 65531, 65533, 655364, 65532, 65533, 655360, 65533, 65533, 655360, 65534, 65533, 1048576, 65530, 65534, 655364, 65531, 65534, 1048581, 65532, 65534, 1048583, 65533, 65534, 1048583, 65534, 65534, 1048581, 65535, 65534, 1048580, 0, 65535, 1048580, 65530, 65535, 1441792, 65531, 65535, 1048581, 65532, 65535, 1048583, 65533, 65535, 1048583, 65534, 65535, 1048581, 65535, 65535, 5 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26352, 3.29188, 0 )
+
+[node name="enemy_swawns" type="Spatial" parent="."]
+
+[node name="pickup_spawns" type="Spatial" parent="."]
+
+[node name="player_spawn" type="Spatial" parent="."]

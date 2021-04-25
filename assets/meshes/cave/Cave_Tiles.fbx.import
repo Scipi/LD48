@@ -2,16 +2,16 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Cave Hallway.fbx-0d6a69719dcfed8555cd9ee40f23871d.scn"
+path="res://.import/Cave_Tiles.fbx-1dcd403dbb636ceef2074805cd5c11a5.scn"
 
 [deps]
 
-source_file="res://assets/meshes/cave/Cave Hallway.fbx"
-dest_files=[ "res://.import/Cave Hallway.fbx-0d6a69719dcfed8555cd9ee40f23871d.scn" ]
+source_file="res://assets/meshes/cave/Cave_Tiles.fbx"
+dest_files=[ "res://.import/Cave_Tiles.fbx-1dcd403dbb636ceef2074805cd5c11a5.scn" ]
 
 [params]
 
-nodes/root_type="MeshInstance"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
