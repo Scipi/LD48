@@ -14,7 +14,7 @@
 
 [sub_resource type="CapsuleMesh" id=3]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 resource_name = "attack"
 length = 0.3
 tracks/0/type = "value"
@@ -93,7 +93,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/weapon_manager/weapons/sword"]
-anims/attack = SubResource( 4 )
+anims/attack = SubResource( 7 )
 anims/idle = SubResource( 5 )
 
 [node name="proj_emitters" type="Spatial" parent="Camera/weapon_manager/weapons/sword"]
