@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://characters/player/player.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/character_mover.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://characters/player/weapon_manager.gd" type="Script" id=4]
 [ext_resource path="res://misc/hitscan_proj_emitter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/player/weapon.gd" type="Script" id=6]
+[ext_resource path="res://characters/player/pickup_manager.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -33,6 +34,9 @@ tracks/0/keys = {
 resource_name = "idle"
 
 [sub_resource type="CylinderMesh" id=6]
+
+[sub_resource type="CapsuleShape" id=7]
+radius = 1.2087
 
 [node name="player" type="KinematicBody"]
 collision_layer = 6
@@ -120,3 +124,12 @@ script = ExtResource( 2 )
 
 [node name="health_manager" type="Spatial" parent="."]
 script = ExtResource( 3 )
+
+[node name="pickup_manager" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="pickup_manager"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 7 )
