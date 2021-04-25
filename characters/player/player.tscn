@@ -7,6 +7,7 @@
 [ext_resource path="res://misc/hitscan_proj_emitter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/player/weapon.gd" type="Script" id=6]
 [ext_resource path="res://assets/meshes/weapons/sword.glb" type="PackedScene" id=7]
+[ext_resource path="res://characters/player/pickup_manager.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -31,6 +32,9 @@ nodes/attack_os/position = Vector2( 40, 120 )
 node_connections = [ "output", 0, "attack_os", "attack_os", 0, "Animation", "attack_os", 1, "Animation 2" ]
 
 [sub_resource type="CylinderMesh" id=6]
+
+[sub_resource type="CapsuleShape" id=7]
+radius = 1.2087
 
 [node name="player" type="KinematicBody"]
 collision_layer = 6
@@ -135,3 +139,11 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [editable path="Camera/weapon_manager/weapons/sword/graphics/sword"]
+[node name="pickup_manager" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="pickup_manager"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 7 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cave Music GTFO.mp3-4395d794bfd4dd4d8b37488feefd2dfa.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cave Music GTFO.mp3"
+dest_files=[ "res://.import/Cave Music GTFO.mp3-4395d794bfd4dd4d8b37488feefd2dfa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
