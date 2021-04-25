@@ -1,29 +1,29 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://characters/player/player.gd" type="Script" id=1]
-[ext_resource path="res://characters/player/character_mover.gd" type="Script" id=2]
-[ext_resource path="res://characters/player/health_manager.gd" type="Script" id=3]
+[ext_resource path="res://characters/character_mover.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/player/weapon_manager.gd" type="Script" id=4]
 [ext_resource path="res://misc/hitscan_proj_emitter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/player/weapon.gd" type="Script" id=6]
 [ext_resource path="res://assets/meshes/weapons/sword.glb" type="PackedScene" id=7]
 [ext_resource path="res://characters/player/pickup_manager.gd" type="Script" id=8]
+[ext_resource path="res://characters/health_manager.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=13]
 
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "attack"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "idle"
 
 [sub_resource type="AnimationNodeOneShot" id=12]
 
-[sub_resource type="AnimationNodeBlendTree" id=10]
+[sub_resource type="AnimationNodeBlendTree" id=15]
 graph_offset = Vector2( -673, 118 )
-nodes/Animation/node = SubResource( 7 )
+nodes/Animation/node = SubResource( 14 )
 nodes/Animation/position = Vector2( -180, 100 )
 "nodes/Animation 2/node" = SubResource( 11 )
 "nodes/Animation 2/position" = Vector2( -220, 240 )
@@ -31,9 +31,9 @@ nodes/attack_os/node = SubResource( 12 )
 nodes/attack_os/position = Vector2( 40, 120 )
 node_connections = [ "output", 0, "attack_os", "attack_os", 0, "Animation", "attack_os", 1, "Animation 2" ]
 
-[sub_resource type="CylinderMesh" id=6]
+[sub_resource type="CylinderMesh" id=16]
 
-[sub_resource type="CapsuleShape" id=7]
+[sub_resource type="CapsuleShape" id=17]
 radius = 1.2087
 
 [node name="player" type="KinematicBody"]
@@ -68,7 +68,7 @@ melee = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Camera/weapon_manager/weapons/fists/graphics"]
 transform = Transform( 0.121309, 0, 0, 0, 0.10658, 0, 0, 0, 0.121309, 0.30638, 0.953821, -0.952892 )
-mesh = SubResource( 2 )
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/weapon_manager/weapons/fists"]
@@ -79,7 +79,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325879, 0.921019, -1.05185 )
 [node name="hitscan_proj_emitter" parent="Camera/weapon_manager/weapons/fists/proj_emitters" instance=ExtResource( 5 )]
 
 [node name="AnimationTree" type="AnimationTree" parent="Camera/weapon_manager/weapons/fists"]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../graphics/sword/AnimationPlayer")
 parameters/attack_os/active = false
 
@@ -104,7 +104,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325879, 0.921019, -1.05185 )
 distance = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="Camera/weapon_manager/weapons/sword"]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../graphics/sword/AnimationPlayer")
 active = true
 parameters/attack_os/active = false
@@ -117,7 +117,7 @@ script = ExtResource( 6 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="Camera/weapon_manager/weapons/bow/graphics"]
 transform = Transform( 0.121309, 0, 0, 0, 0.10658, 0, 0, 0, 0.121309, 0.30638, 0.953821, -0.952892 )
-mesh = SubResource( 6 )
+mesh = SubResource( 16 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/weapon_manager/weapons/bow"]
@@ -128,17 +128,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325879, 0.921019, -1.05185 )
 [node name="hitscan_proj_emitter" parent="Camera/weapon_manager/weapons/bow/proj_emitters" instance=ExtResource( 5 )]
 
 [node name="AnimationTree" type="AnimationTree" parent="Camera/weapon_manager/weapons/bow"]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../graphics/sword/AnimationPlayer")
 parameters/attack_os/active = false
 
-[node name="character_mover" type="Spatial" parent="."]
-script = ExtResource( 2 )
+[node name="character_mover" parent="." instance=ExtResource( 3 )]
 
-[node name="health_manager" type="Spatial" parent="."]
-script = ExtResource( 3 )
+[node name="health_manager" parent="." instance=ExtResource( 9 )]
 
-[editable path="Camera/weapon_manager/weapons/sword/graphics/sword"]
 [node name="pickup_manager" type="Area" parent="."]
 collision_layer = 0
 collision_mask = 8
@@ -146,4 +143,6 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="pickup_manager"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 17 )
+
+[editable path="Camera/weapon_manager/weapons/sword/graphics/sword"]

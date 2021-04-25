@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://characters/npc/npc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/meshes/enemies/BattyNR.fbx" type="PackedScene" id=2]
+[ext_resource path="res://characters/bat/AI.gd" type="Script" id=3]
+[ext_resource path="res://characters/bat/Idle.gd" type="Script" id=4]
+
+[node name="bat" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.479, 0 )
+
+[node name="character_mover" parent="." index="1"]
+flying = true
+
+[node name="graphics" type="Spatial" parent="." index="3"]
+
+[node name="BattyNR" parent="graphics" index="0" instance=ExtResource( 2 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+
+[node name="Senses" type="Spatial" parent="." index="4"]
+
+[node name="Forward" type="RayCast" parent="Senses" index="0"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+
+[node name="Down" type="RayCast" parent="Senses" index="1"]
+enabled = true
+cast_to = Vector3( 0, -2, -3 )
+
+[node name="Up" type="RayCast" parent="Senses" index="2"]
+enabled = true
+cast_to = Vector3( 0, 2, -3 )
+
+[node name="Left" type="RayCast" parent="Senses" index="3"]
+enabled = true
+cast_to = Vector3( -2, 0, -3 )
+
+[node name="Right" type="RayCast" parent="Senses" index="4"]
+enabled = true
+cast_to = Vector3( 2, 0, -3 )
+
+[node name="AI" type="Spatial" parent="." index="5"]
+script = ExtResource( 3 )
+
+[node name="Idle" type="Spatial" parent="AI" index="0"]
+script = ExtResource( 4 )
