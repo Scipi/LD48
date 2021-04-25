@@ -48,7 +48,7 @@ func _physics_process(delta):
 			self.body_to_move.rotation.y
 		)
 		
-	var vel_drag = self.velocity * Vector3(self.drag, 0, self.drag)
+	var vel_drag = self.velocity * Vector3(self.drag, self.drag, self.drag)
 	var grav_acc = self.gravity * Vector3.DOWN * delta
 	
 	if self.flying:

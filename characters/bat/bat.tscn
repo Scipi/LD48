@@ -5,7 +5,7 @@
 [ext_resource path="res://characters/bat/AI.gd" type="Script" id=3]
 
 [node name="bat" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47902, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.479, 0 )
 
 [node name="character_mover" parent="." index="1"]
 flying = true
