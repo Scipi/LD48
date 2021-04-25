@@ -16,6 +16,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115662, 0.294546, -0.00354767 )
 
 [node name="bat" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40258, 5.1726, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2689, 9.42262, 16.7451 )
@@ -65,3 +66,11 @@ material/0 = null
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 transform = Transform( 205.723, 0, 0, 0, 20, 0, 0, 0, 205.723, -0.096, 5, -0.573 )
 navmesh = SubResource( 4 )
+
+[node name="bat2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95708, 2.46066 )
+
+[node name="bat3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08159, 4.17799, 0 )
+
+[node name="bat4" parent="." instance=ExtResource( 2 )]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://characters/npc/npc.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/meshes/enemies/BattyNR.fbx" type="PackedScene" id=2]
 [ext_resource path="res://characters/bat/AI.gd" type="Script" id=3]
+[ext_resource path="res://characters/bat/Idle.gd" type="Script" id=4]
 
 [node name="bat" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.479, 0 )
@@ -39,3 +40,6 @@ cast_to = Vector3( 2, 0, -3 )
 
 [node name="AI" type="Spatial" parent="." index="5"]
 script = ExtResource( 3 )
+
+[node name="Idle" type="Spatial" parent="AI" index="0"]
+script = ExtResource( 4 )
