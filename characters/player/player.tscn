@@ -2,12 +2,13 @@
 
 [ext_resource path="res://characters/player/player.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/character_mover.gd" type="Script" id=2]
-[ext_resource path="res://characters/player/health_manager.gd" type="Script" id=3]
-[ext_resource path="res://characters/player/weapon_manager.gd" type="Script" id=4]
+[ext_resource path="res://characters/health_manager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/character_mover.tscn" type="PackedScene" id=3]
 [ext_resource path="res://misc/hitscan_proj_emitter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/player/weapon.gd" type="Script" id=6]
 [ext_resource path="res://assets/meshes/weapons/sword.glb" type="PackedScene" id=7]
 [ext_resource path="res://characters/player/pickup_manager.gd" type="Script" id=8]
+
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -132,11 +133,9 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../graphics/sword/AnimationPlayer")
 parameters/attack_os/active = false
 
-[node name="character_mover" type="Spatial" parent="."]
-script = ExtResource( 2 )
+[node name="character_mover" parent="." instance=ExtResource( 3 )]
 
-[node name="health_manager" type="Spatial" parent="."]
-script = ExtResource( 3 )
+[node name="health_manager" parent="." instance=ExtResource( 2 )]
 
 [editable path="Camera/weapon_manager/weapons/sword/graphics/sword"]
 [node name="pickup_manager" type="Area" parent="."]
@@ -147,3 +146,4 @@ script = ExtResource( 8 )
 [node name="CollisionShape" type="CollisionShape" parent="pickup_manager"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 7 )
+
