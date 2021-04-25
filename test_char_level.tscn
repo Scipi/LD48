@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://misc/hitscan_proj_emitter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://pickups/health_pickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pickups/arrow_pickup.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -74,4 +76,18 @@ transform = Transform( 1, 0, 0, 0, 0.129505, -0.991579, 0, 0.991579, 0.129505, 0
 mesh = SubResource( 4 )
 material/0 = null
 
+[node name="health_pickup" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4809, 1.87251, 7.15612 )
+
+[node name="health_pickup2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4809, 1.87251, -2.46561 )
+
+[node name="graphics" parent="health_pickup2" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="arrow_pickup" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1411, 1.72276, -26.3125 )
+
 [connection signal="timeout" from="hitscan_proj_emitter/Timer" to="hitscan_proj_emitter" method="attack"]
+
+[editable path="health_pickup2"]

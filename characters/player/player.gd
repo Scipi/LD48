@@ -20,15 +20,16 @@ var dead = false
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$character_mover.init(self)
+	$pickup_manager.max_player_health = $health_manager.max_health
+	$pickup_manager.connect("got_pickup", $Camera/weapon_manager, "get_pickup")
+	$pickup_manager.connect("got_pickup", $health_manager, "get_pickup")
+	$health_manager.connect("health_changed", $pickup_manager, "update_player_health")
 	$health_manager.init()
 	$health_manager.connect("dead", self, 'kill')
 	$Camera/weapon_manager.init($Camera/fire_point, [self])
 	
 
 func _process(_delta):
-	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
-		
 	if dead:
 		return
 	
