@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cave Music Level 5ish.mp3-009c3a84a73179b5936d974f796929fe.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cave Music Level 5ish.mp3"
+dest_files=[ "res://.import/Cave Music Level 5ish.mp3-009c3a84a73179b5936d974f796929fe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,10 +1,257 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://levels/level_manager.gd" type="Script" id=1]
 [ext_resource path="res://levels/relic_manager.gd" type="Script" id=2]
 [ext_resource path="res://assets/images/Heirloom Holder.png" type="Texture" id=3]
+[ext_resource path="res://assets/audio/Cave Music GTFO.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/Cave Music Level 1.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/Cave Music Level 10.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/Cave Music Level 5ish.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/Cave Music Level 3ish.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/Cave Music Level 8ish.mp3" type="AudioStream" id=9]
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=20]
+
+[sub_resource type="Animation" id=21]
+resource_name = "all_off"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_day_1:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("music_anim/cave_day_3:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("music_anim/cave_day_5:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("music_anim/cave_day_8:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("music_anim/cave_day_10:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("music_anim/cave_gtfo:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "cave_1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_day_1:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "cave_10"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_day_10:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "cave_3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_day_3:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "cave_5"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_day_5:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "cave_8"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_day_8:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "cave_gtfo"
+tracks/0/type = "value"
+tracks/0/path = NodePath("music_anim/cave_gtfo:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "cave_1"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "cave_3"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "cave_5"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "cave_8"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "cave_10"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "cave_gtfo"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "all_off"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "idle"
+
+[sub_resource type="AnimationNodeOneShot" id=17]
+
+[sub_resource type="AnimationNodeOneShot" id=29]
+
+[sub_resource type="AnimationNodeOneShot" id=30]
+
+[sub_resource type="AnimationNodeOneShot" id=31]
+
+[sub_resource type="AnimationNodeOneShot" id=32]
+
+[sub_resource type="AnimationNodeOneShot" id=33]
+
+[sub_resource type="AnimationNodeOneShot" id=34]
+
+[sub_resource type="AnimationNodeBlendTree" id=19]
+graph_offset = Vector2( -973.046, -343.5 )
+nodes/Animation/node = SubResource( 42 )
+nodes/Animation/position = Vector2( -860, -220 )
+"nodes/Animation 2/node" = SubResource( 9 )
+"nodes/Animation 2/position" = Vector2( -660, -220 )
+"nodes/Animation 3/node" = SubResource( 10 )
+"nodes/Animation 3/position" = Vector2( -300, -80 )
+"nodes/Animation 4/node" = SubResource( 11 )
+"nodes/Animation 4/position" = Vector2( -100, -80 )
+"nodes/Animation 5/node" = SubResource( 12 )
+"nodes/Animation 5/position" = Vector2( -500, 280 )
+"nodes/Animation 6/node" = SubResource( 13 )
+"nodes/Animation 6/position" = Vector2( -300, 280 )
+"nodes/Animation 7/node" = SubResource( 14 )
+"nodes/Animation 7/position" = Vector2( -100, 280 )
+"nodes/Animation 8/node" = SubResource( 15 )
+"nodes/Animation 8/position" = Vector2( 140, 280 )
+nodes/all_off/node = SubResource( 17 )
+nodes/all_off/position = Vector2( 220, 80 )
+nodes/cave_1/node = SubResource( 29 )
+nodes/cave_1/position = Vector2( -400, -280 )
+nodes/cave_10/node = SubResource( 30 )
+nodes/cave_10/position = Vector2( -200, 80 )
+nodes/cave_3/node = SubResource( 31 )
+nodes/cave_3/position = Vector2( -200, -280 )
+nodes/cave_5/node = SubResource( 32 )
+nodes/cave_5/position = Vector2( 0, -280 )
+nodes/cave_8/node = SubResource( 33 )
+nodes/cave_8/position = Vector2( -400, 80 )
+nodes/cave_gtfo/node = SubResource( 34 )
+nodes/cave_gtfo/position = Vector2( 0, 80 )
+nodes/output/position = Vector2( 520, 60 )
+node_connections = [ "output", 0, "all_off", "cave_10", 0, "cave_8", "cave_10", 1, "Animation 6", "cave_3", 0, "cave_1", "cave_3", 1, "Animation 3", "cave_8", 0, "cave_5", "cave_8", 1, "Animation 5", "cave_5", 0, "cave_3", "cave_5", 1, "Animation 4", "cave_gtfo", 0, "cave_10", "cave_gtfo", 1, "Animation 7", "cave_1", 0, "Animation", "cave_1", 1, "Animation 2", "all_off", 0, "cave_gtfo", "all_off", 1, "Animation 8" ]
 
 [node name="level_manager" type="Spatial" groups=[
 "level_manager",
@@ -12,7 +259,7 @@
 script = ExtResource( 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = SubResource( 20 )
 
 [node name="relic_manager" type="Spatial" parent="." groups=[
 "relic_manager",
@@ -42,3 +289,43 @@ stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="music_anim" type="AnimationPlayer" parent="."]
+anims/all_off = SubResource( 21 )
+anims/cave_1 = SubResource( 22 )
+anims/cave_10 = SubResource( 23 )
+anims/cave_3 = SubResource( 24 )
+anims/cave_5 = SubResource( 25 )
+anims/cave_8 = SubResource( 26 )
+anims/cave_gtfo = SubResource( 27 )
+anims/idle = SubResource( 28 )
+
+[node name="cave_day_1" type="AudioStreamPlayer" parent="music_anim"]
+stream = ExtResource( 5 )
+
+[node name="cave_day_3" type="AudioStreamPlayer" parent="music_anim"]
+stream = ExtResource( 8 )
+
+[node name="cave_day_5" type="AudioStreamPlayer" parent="music_anim"]
+stream = ExtResource( 7 )
+
+[node name="cave_day_8" type="AudioStreamPlayer" parent="music_anim"]
+stream = ExtResource( 9 )
+
+[node name="cave_day_10" type="AudioStreamPlayer" parent="music_anim"]
+stream = ExtResource( 6 )
+
+[node name="cave_gtfo" type="AudioStreamPlayer" parent="music_anim"]
+stream = ExtResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 19 )
+anim_player = NodePath("../music_anim")
+active = true
+parameters/all_off/active = false
+parameters/cave_1/active = false
+parameters/cave_10/active = false
+parameters/cave_3/active = false
+parameters/cave_5/active = false
+parameters/cave_8/active = false
+parameters/cave_gtfo/active = false

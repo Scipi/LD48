@@ -40,6 +40,21 @@ func _ready():
 	current_level = t
 
 func instantiate_level(level_index, ascent):
+	
+	if ascent:
+		play_music("cave_gtfo")
+	else:
+		if day < 3:
+			play_music("cave_day_1")
+		elif day < 5:
+			play_music("cave_day_3")
+		elif day < 8:
+			play_music("cave_day_5")
+		elif day < 10:
+			play_music("cave_day_8")
+		else:
+			play_music("cave_day_10")
+	
 	var p = get_tree().get_nodes_in_group("player").front()
 	if p:
 		p.get_parent().remove_child(p)
@@ -61,9 +76,8 @@ func instantiate_level(level_index, ascent):
 
 func ascend():
 	level_index -= 1
-	# print(level_index)
 	if level_index < 0:
-		print("tevern")
+		stop_all_music()
 		day += 1
 		current_level.queue_free()
 		var t = tavern.instance()
@@ -71,7 +85,7 @@ func ascend():
 		t.init(day, len($relic_manager.claimed_relics))
 		current_level = t
 		return
-	
+		
 	instantiate_level(level_index, true)
 
 func descend():
@@ -81,3 +95,12 @@ func descend():
 		return
 	
 	instantiate_level(level_index, false)
+
+func stop_all_music():
+	for m in $music_anim.get_children():
+		m.playing = false
+
+func play_music(track):
+	if not $music_anim.get_node(track).playing:
+		stop_all_music()
+		$music_anim.get_node(track).playing = true

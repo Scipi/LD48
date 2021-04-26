@@ -27,6 +27,7 @@ func init(rng: RandomNumberGenerator, is_ascent, relic, day):
 	
 	if is_ascent:
 		p.global_transform = $player_spawn_ascent.global_transform
+		$exit/CollisionShape.disabled = true
 	else:
 		p.global_transform = $player_spawn.global_transform
 	
@@ -53,5 +54,6 @@ func init(rng: RandomNumberGenerator, is_ascent, relic, day):
 			$Navigation.add_child(e)
 			e.global_transform = s.global_transform
 	
-	add_child(relic)
-	relic.global_transform = $artifact_spawn.global_transform
+	if not is_ascent:
+		add_child(relic)
+		relic.global_transform = $artifact_spawn.global_transform
