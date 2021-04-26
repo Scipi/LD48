@@ -23,6 +23,7 @@ func attack():
 	)
 	
 	if result and result.collider.has_method("hurt"):
+		print("hurt")
 		result.collider.hurt(self.damage, result.normal)
 	elif result:
 		var hit_effect_inst = self.hit_effect.instance()

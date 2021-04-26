@@ -4,7 +4,7 @@
 [ext_resource path="res://misc/hitscan_proj_emitter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pickups/health_pickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://pickups/arrow_pickup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://characters/bat/bat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/enemies/lesser_golem.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -100,13 +100,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1411, 1.72276, -26.3125 )
 transform = Transform( 205.723, 0, 0, 0, 20, 0, 0, 0, 205.723, -0.096, 5, -0.573 )
 navmesh = SubResource( 5 )
 
-[node name="bat2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95708, 2.46066 )
-
-[node name="bat3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08159, 4.17799, 0 )
-
-[node name="bat4" parent="." instance=ExtResource( 2 )]
+[node name="lesser_golem" parent="Navigation" instance=ExtResource( 6 )]
+transform = Transform( -0.536681, 0, -0.843785, 0, 1, 0, 0.843785, 0, -0.536681, 7.00152, 1.69065, -21.4266 )
 
 [connection signal="timeout" from="hitscan_proj_emitter/Timer" to="hitscan_proj_emitter" method="attack"]
 
