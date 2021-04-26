@@ -16,6 +16,13 @@ var hotkeys = {
 export var mouse_sens = 0.15
 
 var dead = false
+var can_ascend = false
+var can_descend = false
+
+onready var level_manager = get_tree().get_nodes_in_group("level_manager")[0]
+
+signal can_ascend_changed
+signal can_descend_changed
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -54,6 +61,14 @@ func _process(_delta):
 		Input.is_action_just_pressed("attack"),
 		Input.is_action_pressed("attack")
 	)
+	
+	if Input.is_action_just_released("interact"):
+		if can_ascend:
+			level_manager.ascend()
+			set_can_ascend(false)
+		elif can_descend:
+			level_manager.descend()
+			set_can_descend(false)
 
 func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -73,7 +88,7 @@ func _input(event):
 		if event.pressed and event.scancode in self.hotkeys:
 			$Camera/weapon_manager.switch_weapon(self.hotkeys[event.scancode])
 	
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == BUTTON_WHEEL_UP:
 			$Camera/weapon_manager.prev_weapon()
 		if event.button_index == BUTTON_WHEEL_DOWN:
@@ -90,3 +105,10 @@ func kill():
 	self.dead = true
 	$character_mover.freeze()
 
+func set_can_descend(val):
+	can_descend = val
+	emit_signal("can_descend_changed", val)
+
+func set_can_ascend(val):
+	can_ascend = val
+	emit_signal("can_ascend_changed", val)

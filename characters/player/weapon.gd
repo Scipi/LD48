@@ -18,6 +18,8 @@ var can_attack = true
 signal fired
 signal out_of_ammo
 
+onready var relic_manager = get_tree().get_nodes_in_group("relic_manager")[0]
+
 func _ready():
 	self.attack_timer = Timer.new()
 	self.attack_timer.wait_time = self.attack_rate
@@ -46,7 +48,10 @@ func attack(attack_input_just_pressed: bool, attack_input_held: bool):
 		return
 	
 	if ammo > 0 and !self.melee:
-		ammo -= 1
+		if relic_manager.active_relics[4]:
+			ammo -= 2
+		else:
+			ammo -= 1
 	
 	var start_transform = $proj_emitters.global_transform
 	$proj_emitters.global_transform = self.fire_point.global_transform

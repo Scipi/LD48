@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://characters/character_mover.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/meshes/enemies/tentacle/tentacle.glb" type="PackedScene" id=2]
+[ext_resource path="res://characters/health_manager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://weapons/damage_area.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/enemies/enemy.gd" type="Script" id=6]
+[ext_resource path="res://characters/enemies/aim_at_object.gd" type="Script" id=7]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.849004
+height = 1.43633
+
+[node name="tentacle" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 6 )
+turn_speed = 100.0
+attack_range = 4.0
+attack_rate = 2.0
+attack_anim_speed_mod = 2.0
+walk_anim_speed_mod = 2.5
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.57825, -0.0572081 )
+shape = SubResource( 1 )
+
+[node name="character_mover" parent="." instance=ExtResource( 1 )]
+move_accel = 0
+max_speed = 10
+enemy = true
+ignore_rotation = true
+
+[node name="health_manager" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79436, 0 )
+starting_max_health = 30
+gib_at = 0
+enemy = true
+
+[node name="aim_at_object" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66697, 0.780511 )
+script = ExtResource( 7 )
+
+[node name="damage_area" parent="aim_at_object" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.943975 )
+damage = 15
+
+[node name="graphics" parent="." instance=ExtResource( 2 )]
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0 )
+
+[connection signal="attack" from="." to="aim_at_object/damage_area" method="fire"]
+
+[editable path="graphics"]

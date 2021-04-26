@@ -19,6 +19,7 @@ export var attack_angle = 5.0
 export var attack_range = 2.0
 export var attack_rate = 0.5
 export var attack_anim_speed_mod = 0.5
+export var walk_anim_speed_mod = 1.0
 var attack_timer : Timer
 var can_attack = true
 
@@ -59,12 +60,10 @@ func set_state_idle():
 	anim_player.play("idle_loop")
 
 func set_state_chase():
-	print("chase")
 	cur_state = STATES.CHASE
-	anim_player.play("walk_loop", 0.2)
+	anim_player.play("walk_loop", 0.2, self.walk_anim_speed_mod)
 
 func set_state_attack():
-	print("attack")
 	cur_state = STATES.ATTACK
 
 func set_state_dead():
@@ -72,6 +71,7 @@ func set_state_dead():
 	anim_player.play("die")
 	character_mover.freeze()
 	$CollisionShape.disabled = true
+	self.collision_layer = 0
 
 func process_state_idle(delta):
 	if can_see_player():
@@ -98,7 +98,6 @@ func process_state_attack(delta):
 		if !within_dis_of_player(attack_range) or !can_see_player():
 			set_state_chase()
 		elif !player_within_angle(attack_angle):
-			print("turn")
 			face_dir(global_transform.origin.direction_to(player.global_transform.origin), delta)
 		else:
 			start_attack()
@@ -112,7 +111,6 @@ func hurt(damage: int, dir: Vector3):
 	health_mananger.hurt(damage, dir)
 
 func start_attack():
-	print("attack")
 	can_attack = false
 	anim_player.play("attack", -1, attack_anim_speed_mod)
 	attack_timer.start()

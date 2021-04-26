@@ -6,6 +6,8 @@ export var distance = 1000
 var bodies_to_exclude = []
 var damage = 1
 
+onready var relic_manager = get_tree().get_nodes_in_group("relic_manager")[0]
+
 func set_damage(_damage):
 	self.damage = _damage
 
@@ -23,8 +25,11 @@ func attack():
 	)
 	
 	if result and result.collider.has_method("hurt"):
-		print("hurt")
-		result.collider.hurt(self.damage, result.normal)
+		var damage_mult = 1.0
+		if relic_manager.active_relics[0]:
+			damage_mult = 0.5
+			
+		result.collider.hurt(self.damage * damage_mult, result.normal)
 	elif result:
 		var hit_effect_inst = self.hit_effect.instance()
 		get_tree().get_root().add_child(hit_effect_inst)

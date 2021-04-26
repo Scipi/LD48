@@ -9,17 +9,35 @@ signal healed
 signal health_changed
 signal gibbed
 
-export var max_health = 100
+export var starting_max_health = 100
 var cur_health = 1
 
 export var gib_at = -10
+export var enemy = false
+
+var max_health = 0
+
+onready var relic_manager = get_tree().get_nodes_in_group("relic_manager")[0]
 
 func _ready():
+	self.max_health = starting_max_health
 	init()
 	
 func init():
 	self.cur_health = self.max_health
 	emit_signal("health_changed", self.cur_health)
+
+func _process(delta):
+	if relic_manager.active_relics[8] and not enemy:
+		self.max_health = starting_max_health * 0.75
+	else:
+		self.max_health = starting_max_health
+	
+	if cur_health > max_health:
+		cur_health = max_health
+		emit_signal("health_changed", self.cur_health)
+		
+
 
 func hurt(damage: int, _dir: Vector3):
 	spawn_blood(_dir)

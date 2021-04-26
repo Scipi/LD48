@@ -1,0 +1,491 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/SyndiBox/syndibox.gd" type="Script" id=1]
+[ext_resource path="res://levels/tavern.gd" type="Script" id=2]
+
+[node name="tavern" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="day_1" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_1"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="day_2" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_2"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_2/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_2/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_2/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_2/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_2/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_2/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_2/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_3" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_3"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_3/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_3/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_3/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_3/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_3/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_3/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_3/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_4" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_4"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_4/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_4/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_4/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_4/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_4/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_4/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_4/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_5" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_5"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_5/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_5/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_5/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_5/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_5/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_5/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_5/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_6" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_6"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_6/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_6/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_6/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_6/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_6/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_6/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_6/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_7" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_7"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_7/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_7/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_7/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_7/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_7/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_7/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_7/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_8" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_8"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_8/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_8/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_8/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_8/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_8/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_8/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_8/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_9" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_9"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_9/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_9/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_9/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_9/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_9/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_9/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_9/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="day_10" type="Panel" parent="."]
+visible = false
+margin_left = 1.88776
+margin_top = 399.259
+margin_right = 1021.89
+margin_bottom = 598.315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_10"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "Greetings adventurer"
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_10/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_10/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_10/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_10/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_10/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_10/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_10/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )

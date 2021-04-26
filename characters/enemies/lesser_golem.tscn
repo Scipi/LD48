@@ -1,24 +1,22 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://characters/character_mover.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/meshes/enemies/GolemNR.fbx" type="PackedScene" id=2]
 [ext_resource path="res://characters/health_manager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/hitbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://weapons/damage_area.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/enemies/enemy.gd" type="Script" id=6]
 [ext_resource path="res://characters/enemies/aim_at_object.gd" type="Script" id=7]
 [ext_resource path="res://assets/meshes/enemies/lesser_golem.glb" type="PackedScene" id=8]
-[ext_resource path="res://assets/meshes/enemies/idle_loop.anim" type="Animation" id=9]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=22]
 radius = 0.849004
 height = 1.43633
 
-[sub_resource type="CapsuleShape" id=6]
+[sub_resource type="CapsuleShape" id=14]
 radius = 0.250195
 height = 0.664816
 
-[sub_resource type="CapsuleShape" id=7]
+[sub_resource type="CapsuleShape" id=15]
 radius = 0.231035
 height = 0.798104
 
@@ -26,64 +24,13 @@ height = 0.798104
 radius = 2.82738
 height = 7.40049
 
-[sub_resource type="CapsuleShape" id=13]
+[sub_resource type="CapsuleShape" id=16]
 radius = 2.82738
 height = 7.40049
 
-[sub_resource type="CapsuleShape" id=8]
+[sub_resource type="CapsuleShape" id=17]
 radius = 0.636329
 height = 0.120112
-
-[sub_resource type="Animation" id=9]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "method"
-tracks/0/path = NodePath("../aim_at_object/damage_area")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "fire"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GolemNR:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("GolemNR:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "die"
-
-[sub_resource type="Animation" id=11]
-resource_name = "idle_loop"
-
-[sub_resource type="Animation" id=5]
-resource_name = "walk_loop"
 
 [node name="lesser_golem" type="KinematicBody"]
 collision_layer = 2
@@ -91,23 +38,18 @@ collision_mask = 3
 script = ExtResource( 6 )
 turn_speed = 100.0
 attack_range = 4.0
+attack_anim_speed_mod = 1.0
+walk_anim_speed_mod = 2.5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.57825, -0.0572081 )
-shape = SubResource( 1 )
+shape = SubResource( 22 )
 
 [node name="graphics" parent="." instance=ExtResource( 8 )]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 
-[node name="Skeleton" parent="graphics/Armature" index="0"]
-bones/1/bound_children = [ NodePath("BoneAttachment5") ]
-bones/3/bound_children = [ NodePath("BoneAttachment") ]
-bones/4/bound_children = [ NodePath("BoneAttachment3") ]
-bones/6/bound_children = [ NodePath("BoneAttachment2") ]
-bones/7/bound_children = [ NodePath("BoneAttachment4") ]
-
 [node name="BoneAttachment" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="1"]
-transform = Transform( -0.000881622, 0.000370502, -0.999999, 0.409067, 0.912504, -2.25294e-05, 0.912504, -0.409067, -0.000955993, -8.03129, 0.184396, -21.7238 )
+transform = Transform( -0.000403673, 0.000207864, -1, 0.476387, 0.879236, -9.41809e-06, 0.879236, -0.476387, -0.000453955, -8.04297, 0.184396, -20.5273 )
 bone_name = "Right_Hip"
 
 [node name="hitbox" parent="graphics/Armature/Skeleton/BoneAttachment" instance=ExtResource( 4 )]
@@ -115,10 +57,11 @@ transform = Transform( 1.02533, 9.94727, 0.0115973, -9.94729, 1.02533, 0.0054439
 
 [node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment/hitbox"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 14 )
+disabled = true
 
 [node name="BoneAttachment2" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="2"]
-transform = Transform( 0.0012649, -0.000359046, -0.999999, 0.411118, 0.911386, 0.000194, 0.910517, -0.411565, 0.00130198, 7.65744, 0.184396, -21.7238 )
+transform = Transform( 0.00183084, -0.000665564, -0.999998, 0.461606, 0.886721, 0.000256061, 0.886227, -0.461861, 0.00193257, 7.64576, 0.184395, -20.5273 )
 bone_name = "Left_Hip"
 
 [node name="hitbox2" parent="graphics/Armature/Skeleton/BoneAttachment2" instance=ExtResource( 4 )]
@@ -126,10 +69,11 @@ transform = Transform( -0.793591, -9.93413, -0.935991, 6.18483, -1.22642, 7.7565
 
 [node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment2/hitbox2"]
 transform = Transform( 1, 5.96046e-08, 0, -5.96046e-08, -8.9407e-08, -1, -2.98023e-08, 1, -1.19209e-07, -0.0405109, 0.000252843, 0.032366 )
-shape = SubResource( 7 )
+shape = SubResource( 15 )
+disabled = true
 
 [node name="BoneAttachment3" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="3"]
-transform = Transform( -0.000861885, -0.000414223, -0.999999, -0.411812, 0.911269, -2.25053e-05, 0.911268, 0.411811, -0.000955941, -8.04188, 5.09625, -10.767 )
+transform = Transform( -0.000373867, -0.000257558, -1, -0.549929, 0.835211, -9.39012e-06, 0.835211, 0.549929, -0.000453904, -8.04781, 5.90459, -9.96997 )
 bone_name = "Right_Foot"
 
 [node name="hitbox" parent="graphics/Armature/Skeleton/BoneAttachment3" instance=ExtResource( 4 )]
@@ -137,19 +81,21 @@ bone_name = "Right_Foot"
 [node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment3/hitbox"]
 transform = Transform( 0.0766675, 0.000382774, -0.997057, -0.997056, 0.00124173, -0.076667, 0.00120881, 1, 0.000476838, 6.19692, -1.70694, -0.905592 )
 shape = SubResource( 12 )
+disabled = true
 
 [node name="BoneAttachment4" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="4"]
-transform = Transform( 0.0011025, -0.000712717, 0.999999, -0.409611, -0.912064, -0.000199652, 0.911824, -0.408664, -0.00129904, 7.6725, 5.08609, -10.8676 )
+transform = Transform( 0.00145027, -0.00129779, 0.999998, -0.560799, -0.827562, -0.000261791, 0.827552, -0.560244, -0.00192988, 7.66757, 5.68806, -9.96072 )
 bone_name = "Left_Foot"
 
 [node name="hitbox" parent="graphics/Armature/Skeleton/BoneAttachment4" instance=ExtResource( 4 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment4/hitbox"]
 transform = Transform( 0.0766675, 0.000382774, -0.997057, -0.997056, 0.00124173, -0.076667, 0.00120881, 1, 0.000476838, 6.19692, -1.70694, -0.905592 )
-shape = SubResource( 13 )
+shape = SubResource( 16 )
+disabled = true
 
 [node name="BoneAttachment5" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="5"]
-transform = Transform( -0.105895, -0.00724016, -0.994351, 0.994219, 0.017099, -0.106005, 0.0177699, -0.999828, 0.00538761, -0.592871, 0.383483, -21.9027 )
+transform = Transform( 0.0177883, 0.000571073, -0.999842, 0.999326, 0.0321018, 0.0177976, 0.0321069, -0.999485, 3.55093e-07, -0.604545, 0.383483, -20.7063 )
 bone_name = "Head_Center"
 
 [node name="hitbox3" parent="graphics/Armature/Skeleton/BoneAttachment5" instance=ExtResource( 4 )]
@@ -158,31 +104,20 @@ weak_spot = true
 
 [node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment5/hitbox3"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 8 )
-
-[node name="AnimationPlayer" parent="graphics" index="5"]
-anims/idle_loop = ExtResource( 9 )
-
-[node name="graphics_" type="Spatial" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.708808, 0 )
-visible = false
-
-[node name="GolemNR" parent="graphics_" instance=ExtResource( 2 )]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="graphics_"]
-anims/attack = SubResource( 9 )
-anims/die = SubResource( 10 )
-anims/idle_loop = SubResource( 11 )
-anims/walk_loop = SubResource( 5 )
+shape = SubResource( 17 )
+disabled = true
 
 [node name="character_mover" parent="." instance=ExtResource( 1 )]
 move_accel = 2
 max_speed = 10
+enemy = true
+ignore_rotation = true
 
 [node name="health_manager" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79436, 0 )
-max_health = 15
+starting_max_health = 30
 gib_at = 0
+enemy = true
 
 [node name="aim_at_object" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66697, 0.780511 )
@@ -198,4 +133,3 @@ damage = 5
 [editable path="graphics/Armature/Skeleton/BoneAttachment/hitbox"]
 [editable path="graphics/Armature/Skeleton/BoneAttachment2/hitbox2"]
 [editable path="graphics/Armature/Skeleton/BoneAttachment5/hitbox3"]
-[editable path="graphics_/GolemNR"]

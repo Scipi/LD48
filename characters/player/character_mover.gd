@@ -10,6 +10,7 @@ var drag = 0.0
 export var jump_force = 30
 export var gravity = 100
 export var flying = false
+export var enemy = false
 
 var pressed_jump = false
 var move_vec : Vector3
@@ -21,21 +22,31 @@ signal movement_info
 
 var frozen = false
 
+onready var relic_manager = get_tree().get_nodes_in_group("relic_manager")[0]
+
 func _ready():
 	self.drag = float(self.move_accel) / self.max_speed
-	
+
 
 func init(_body_to_move: KinematicBody):
 	body_to_move = _body_to_move
 
 
 func jump():
+	if relic_manager.active_relics[6]:
+		return
 	self.pressed_jump = true
-	
+
 
 func set_move_vec(_move_vec: Vector3):
 	move_vec = _move_vec.normalized()
 	
+
+func _process(delta):
+	var speed_mult = 1.0
+	if relic_manager.active_relics[2] and self.enemy:
+		speed_mult = 1.5
+	self.drag = float(self.move_accel) / self.max_speed / speed_mult
 
 func _physics_process(delta):
 	if self.frozen:

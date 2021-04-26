@@ -6,13 +6,11 @@ var current_weapon_id = 1  # Sword
 var current_weapon = null
 
 enum WEAPON_TYPES {
-	FISTS = 0,
-	SWORD = 1,
-	BOW = 2
+	SWORD = 0,
+	BOW = 1
 }
 
 onready var weapons = {
-	WEAPON_TYPES.FISTS: get_node("weapons/fists"),
 	WEAPON_TYPES.SWORD: get_node("weapons/sword"),
 	WEAPON_TYPES.BOW: get_node("weapons/bow")
 }
@@ -33,7 +31,7 @@ func init(_fire_point: Spatial, _bodies_to_exclude: Array):
 	for w in self.weapons.values():
 		w.connect("fired", self, "emit_ammo_changed_signal")
 		
-	switch_weapon(1)
+	switch_weapon(WEAPON_TYPES.SWORD)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
