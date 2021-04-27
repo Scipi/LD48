@@ -251,7 +251,7 @@ nodes/cave_8/position = Vector2( -400, 80 )
 nodes/cave_gtfo/node = SubResource( 24 )
 nodes/cave_gtfo/position = Vector2( 0, 80 )
 nodes/output/position = Vector2( 520, 60 )
-node_connections = [ "output", 0, "all_off", "cave_gtfo", 0, "cave_10", "cave_gtfo", 1, "Animation 7", "cave_1", 0, "Animation", "cave_1", 1, "Animation 2", "cave_5", 0, "cave_3", "cave_5", 1, "Animation 4", "cave_3", 0, "cave_1", "cave_3", 1, "Animation 3", "cave_10", 0, "cave_8", "cave_10", 1, "Animation 6", "all_off", 0, "cave_gtfo", "all_off", 1, "Animation 8", "cave_8", 0, "cave_5", "cave_8", 1, "Animation 5" ]
+node_connections = [ "output", 0, "all_off", "cave_gtfo", 0, "cave_10", "cave_gtfo", 1, "Animation 7", "cave_3", 0, "cave_1", "cave_3", 1, "Animation 3", "cave_1", 0, "Animation", "cave_1", 1, "Animation 2", "cave_5", 0, "cave_3", "cave_5", 1, "Animation 4", "cave_8", 0, "cave_5", "cave_8", 1, "Animation 5", "all_off", 0, "cave_gtfo", "all_off", 1, "Animation 8", "cave_10", 0, "cave_8", "cave_10", 1, "Animation 6" ]
 
 [node name="level_manager" type="Spatial" groups=[
 "level_manager",

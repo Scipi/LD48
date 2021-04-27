@@ -5,9 +5,9 @@ var active_relics = [
 	false,  # less player damage
 	false,  # more enemy damage
 	false,  # faster enemies
-	false,  # fewer pickups
+	true,  # fewer pickups
 	false,  # double ammo consumption
-	false,  # extra enemy spawns
+	true,  # extra enemy spawns
 	false,  # no jumping
 	false,  # larger fireball
 	false,  # less max health
@@ -25,9 +25,9 @@ func reset_active_relics():
 		false,  # less player damage
 		false,  # more enemy damage
 		false,  # faster enemies
-		false,  # fewer pickups
+		true,  # fewer pickups
 		false,  # double ammo consumption
-		false,  # extra enemy spawns
+		true,  # extra enemy spawns
 		false,  # no jumping
 		false,  # larger fireball
 		false,  # less max health

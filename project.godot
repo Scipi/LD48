@@ -30,6 +30,10 @@ config/name="LD48"
 run/main_scene="res://levels/level_manager.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/SyndiBox/plugin.cfg" )

@@ -50,7 +50,7 @@ func init(rng: RandomNumberGenerator, is_ascent, relic, day):
 			e.global_transform = s.global_transform
 	
 	if relic_manager.active_relics[5] and is_ascent:
-		for s in $extra_swawns.get_children():
+		for s in $extra_spawns.get_children():
 			var i = rng.randi_range(0, len(ascent_enemies)-1)
 			var e = ascent_enemies[i].instance()
 			
