@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/SyndiBox/syndibox.gd" type="Script" id=1]
 [ext_resource path="res://levels/tavern.gd" type="Script" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://assets/images/characters/ldjamwizard1.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/characters/ldjambard1.png" type="Texture" id=9]
 [ext_resource path="res://addons/SyndiBox/custom.gd" type="Script" id=10]
+[ext_resource path="res://assets/audio/Sound Effects/Tavern Ambiance.mp3" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/Tavern Music Day 8.mp3" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/Tavern Music Day 5ish.mp3" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/Tavern Music Day 10.mp3" type="AudioStream" id=14]
+[ext_resource path="res://assets/audio/Tavern Music Day 3.mp3" type="AudioStream" id=15]
+[ext_resource path="res://assets/audio/Tavern Music Day 1.mp3" type="AudioStream" id=16]
 
 [node name="tavern" type="Spatial"]
 script = ExtResource( 2 )
@@ -633,10 +639,10 @@ rect_min_size = Vector2( 1, 0 )
 
 [node name="day_11" type="Panel" parent="."]
 visible = false
-margin_left = 3.77552
-margin_top = 798.518
-margin_right = 1023.78
-margin_bottom = 997.574
+margin_left = 0.411934
+margin_top = 399.933
+margin_right = 1020.42
+margin_bottom = 598.989
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -718,3 +724,29 @@ scroll_horizontal_enabled = false
 margin_right = 957.0
 margin_bottom = 134.0
 rect_min_size = Vector2( 957, 134 )
+
+[node name="music" type="Spatial" parent="."]
+
+[node name="day_1_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 16 )
+volume_db = -10.0
+
+[node name="day_3_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 15 )
+volume_db = -10.0
+
+[node name="day_5_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 13 )
+volume_db = -10.0
+
+[node name="day_8_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 12 )
+volume_db = -10.0
+
+[node name="day_10_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 14 )
+volume_db = -10.0
+
+[node name="ambiance" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 11 )
+volume_db = -20.0

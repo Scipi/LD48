@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Corpse Slime sound Chasing Player.mp3-57b3ee1440e5d21a22ae864a41f0b6f6.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Corpse Slime sound Chasing Player.mp3"
+dest_files=[ "res://.import/Corpse Slime sound Chasing Player.mp3-57b3ee1440e5d21a22ae864a41f0b6f6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -114,3 +114,5 @@ func play_music(track):
 	if not $music_anim.get_node(track).playing:
 		stop_all_music()
 		$music_anim.get_node(track).playing = true
+		$music_anim.get_node(track).volume_db = -10
+		$music_anim/ambiance.playing = true

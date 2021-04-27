@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Artifact Obtained.mp3-978c406c7d7cc883dcdde5b8c968583a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Artifact Obtained.mp3"
+dest_files=[ "res://.import/Artifact Obtained.mp3-978c406c7d7cc883dcdde5b8c968583a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

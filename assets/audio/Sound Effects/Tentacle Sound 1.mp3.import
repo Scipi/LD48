@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Tentacle Sound 1.mp3-73db289d79ba3d260774313b509cb6e4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Tentacle Sound 1.mp3"
+dest_files=[ "res://.import/Tentacle Sound 1.mp3-73db289d79ba3d260774313b509cb6e4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

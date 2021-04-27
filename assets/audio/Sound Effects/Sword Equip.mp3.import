@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sword Equip.mp3-db27662cb0c7774802358d47eb0ecda2.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Sword Equip.mp3"
+dest_files=[ "res://.import/Sword Equip.mp3-db27662cb0c7774802358d47eb0ecda2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

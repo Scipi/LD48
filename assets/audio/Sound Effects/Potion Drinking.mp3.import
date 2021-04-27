@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Potion Drinking.mp3-cf70f647635647ddd077afb6460d74f7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Potion Drinking.mp3"
+dest_files=[ "res://.import/Potion Drinking.mp3-cf70f647635647ddd077afb6460d74f7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

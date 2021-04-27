@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cave Ambiance.mp3-2514621275123df46335cb776bb29af0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Cave Ambiance.mp3"
+dest_files=[ "res://.import/Cave Ambiance.mp3-2514621275123df46335cb776bb29af0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

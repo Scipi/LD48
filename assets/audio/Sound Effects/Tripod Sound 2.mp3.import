@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Tripod Sound 2.mp3-c0a9c17271bc21634e58d504146d0664.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Tripod Sound 2.mp3"
+dest_files=[ "res://.import/Tripod Sound 2.mp3-c0a9c17271bc21634e58d504146d0664.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

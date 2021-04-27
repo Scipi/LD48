@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bow Fire.mp3-03ef6035cd74fc037d37409263d1069c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Bow Fire.mp3"
+dest_files=[ "res://.import/Bow Fire.mp3-03ef6035cd74fc037d37409263d1069c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Going Deeper_Going Higher.mp3-51ac5ef611b75bf723dfcbd737be9e6b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Going Deeper_Going Higher.mp3"
+dest_files=[ "res://.import/Going Deeper_Going Higher.mp3-51ac5ef611b75bf723dfcbd737be9e6b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

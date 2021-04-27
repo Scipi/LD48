@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Tavern Ambiance.mp3-74ca1ff75b5c0e073ed2240eeae5b92c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Tavern Ambiance.mp3"
+dest_files=[ "res://.import/Tavern Ambiance.mp3-74ca1ff75b5c0e073ed2240eeae5b92c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,18 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://characters/character_mover.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/meshes/enemies/Golem_D.png" type="Texture" id=2]
 [ext_resource path="res://characters/health_manager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/audio/Sound Effects/Rock Golum Walking.mp3" type="AudioStream" id=4]
 [ext_resource path="res://weapons/damage_area.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/enemies/enemy.gd" type="Script" id=6]
 [ext_resource path="res://characters/enemies/aim_at_object.gd" type="Script" id=7]
 [ext_resource path="res://assets/meshes/enemies/lesser_golem.glb" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/Sound Effects/Tentacle Sound 1.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/Sound Effects/Enemy Hit sound.mp3" type="AudioStream" id=10]
 
-[sub_resource type="CapsuleShape" id=22]
+[sub_resource type="CapsuleShape" id=1]
 radius = 0.849004
 height = 1.43633
 
-[sub_resource type="SpatialMaterial" id=23]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 2 )
 
 [node name="lesser_golem" type="KinematicBody"]
@@ -26,7 +29,7 @@ walk_anim_speed_mod = 2.5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.57825, -0.0572081 )
-shape = SubResource( 22 )
+shape = SubResource( 1 )
 
 [node name="character_mover" parent="." instance=ExtResource( 1 )]
 move_accel = 2
@@ -34,11 +37,18 @@ max_speed = 10
 enemy = true
 ignore_rotation = true
 
+[node name="walking_sound" parent="character_mover" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00886929, 0, -0.00146055 )
+stream = ExtResource( 4 )
+
 [node name="health_manager" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79436, 0 )
 starting_max_health = 30
 gib_at = 0
 enemy = true
+
+[node name="hit" type="AudioStreamPlayer3D" parent="health_manager"]
+stream = ExtResource( 10 )
 
 [node name="aim_at_object" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66697, 0.780511 )
@@ -52,8 +62,15 @@ damage = 5
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 
 [node name="pCube6" parent="graphics/Armature/Skeleton" index="0"]
-material/0 = SubResource( 23 )
+material/0 = SubResource( 2 )
+
+[node name="attack" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75425, 0 )
+stream = ExtResource( 9 )
 
 [connection signal="attack" from="." to="aim_at_object/damage_area" method="fire"]
+[connection signal="attack" from="." to="attack" method="play"]
+[connection signal="hurt" from="health_manager" to="health_manager/hit" method="play"]
 
+[editable path="character_mover"]
 [editable path="graphics"]

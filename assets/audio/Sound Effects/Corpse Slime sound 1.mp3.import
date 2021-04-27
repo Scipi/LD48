@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Corpse Slime sound 1.mp3-f133acc4bb684e02292893fa926a6346.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Corpse Slime sound 1.mp3"
+dest_files=[ "res://.import/Corpse Slime sound 1.mp3-f133acc4bb684e02292893fa926a6346.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

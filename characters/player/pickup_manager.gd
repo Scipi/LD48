@@ -42,5 +42,6 @@ func on_area_enter(pickup: Pickup):
 		Pickup.PICKUP_TYPES.ARTIFACT_10:
 			relic_manager.claim_relic(9)
 	
+	pickup.pickup()
 	emit_signal("got_pickup", pickup.pickup_type, pickup.pickup_value)
 	pickup.queue_free()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Rock Golum Walking.mp3-e198b3fd50df9b5f789db4817422aaa1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Rock Golum Walking.mp3"
+dest_files=[ "res://.import/Rock Golum Walking.mp3-e198b3fd50df9b5f789db4817422aaa1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

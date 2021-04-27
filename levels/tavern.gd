@@ -36,6 +36,18 @@ func init(day, num_artifacts_collected):
 		11:
 			$day_11.show()
 			$day_11/syndibox.connect("text_finished", self, "end_game")
+	
+	if day < 3:
+		$music/day_1_music.play()
+	elif day < 5:
+		$music/day_3_music.play()
+	elif day < 8:
+		$music/day_5_music.play()
+	elif day < 10:
+		$music/day_8_music.play()
+	else:
+		$music/day_10_music.play()
+	$music/ambiance.play()
 
 func end_game():
 	get_tree().quit(0)
@@ -45,6 +57,8 @@ func _input(event):
 		get_tree().quit(0)
 
 func return_to_caves():
+	for m in $music.get_children():
+		m.stop()
 	var lm = get_tree().get_nodes_in_group("level_manager")[0]
 	lm.descend()
 	print("descend")

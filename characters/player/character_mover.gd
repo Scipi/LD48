@@ -72,6 +72,11 @@ func _physics_process(delta):
 		self.snap_vec,
 		Vector3.UP
 	)
+	
+	if self.velocity.length_squared() > 0.5:
+		play_walking_sound()
+	else:
+		stop_walking_sound()
 
 	var grounded = self.body_to_move.is_on_floor()
 	
@@ -89,6 +94,14 @@ func _physics_process(delta):
 		
 		self.pressed_jump = false
 	emit_signal("movement_info", self.velocity, grounded)
+
+
+func play_walking_sound():
+	if not $walking_sound.playing:
+		$walking_sound.play()
+
+func stop_walking_sound():
+	$walking_sound.stop()
 
 
 func freeze():

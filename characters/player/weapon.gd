@@ -15,6 +15,7 @@ export var attack_rate = 1.0
 var attack_timer: Timer
 var can_attack = true
 
+signal equipped
 signal fired
 signal out_of_ammo
 
@@ -71,6 +72,7 @@ func finish_attack():
 
 func set_active():
 	show()
+	emit_signal("equipped")
 
 func set_inactive():
 	$AnimationTree["parameters/attack_os/active"] = false
