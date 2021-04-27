@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://pickups/pickup.gd" type="Script" id=1]
+[ext_resource path="res://assets/meshes/pickups/Arrow.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 0.002
@@ -34,8 +35,6 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 120, 0 ), Vector3( 0, 240, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[sub_resource type="CubeMesh" id=3]
-
 [node name="arrow_pickup" type="Area"]
 monitoring = false
 collision_layer = 8
@@ -51,7 +50,5 @@ anims/spin = SubResource( 2 )
 
 [node name="graphics" type="Spatial" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="graphics"]
-transform = Transform( 0.593151, 0, 0, 0, 0.0660484, 0, 0, 0, 0.0660484, 0, 0, 0 )
-mesh = SubResource( 3 )
-material/0 = null
+[node name="Arrow" parent="graphics" instance=ExtResource( 2 )]
+transform = Transform( 0.274966, 0, 0, 0, 0.274966, 0, 0, 0, 0.274966, 0, 0, 0 )

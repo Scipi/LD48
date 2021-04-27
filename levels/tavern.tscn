@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/SyndiBox/syndibox.gd" type="Script" id=1]
 [ext_resource path="res://levels/tavern.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/characters/ldjamlittlegirl3sketch.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/characters/ldjamlittlegirl2sketch.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/characters/ldjambartender1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/characters/ldjamlittlegirl1.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/characters/ldjambarmaid.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/characters/ldjamwizard1.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/characters/ldjambard1.png" type="Texture" id=9]
+[ext_resource path="res://addons/SyndiBox/custom.gd" type="Script" id=10]
 
 [node name="tavern" type="Spatial"]
 script = ExtResource( 2 )
@@ -25,11 +33,32 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
+DIALOG = "Doom is at hand. That is what the oracles say and the oracles are never wrong.
+In 7 days ruin will come to our lands by a being that none can stop.
+But there is salvation.
+ It is said that in the caves near our village there lies 10 otherworldly artifacts with the power to stave off doom.
+A hero willing to face the dangers of the cave and claim these artifacts may deliver us from fate and you are certainly brave.
+But beware, the caves are cursed. To step inside, even for a moment, a full day will pass on the outside.
+And the further you venture into the cave, the less hope remains that you will ever come out.
+Alas, the cave is deceptive.
+To descend into its depths is a simple matter, no different than an afternoon stroll.
+But to return from that darkness will burden you with its curse.
+*You begin your descent...*"
 CHARACTER_NAME = "Tavern Keep"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="TextureRect" type="TextureRect" parent="day_1"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="day_2" type="Panel" parent="."]
 visible = false
@@ -50,8 +79,12 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "The hero returneth!
+Take heed saviour, The creature shalt punisheth us, if we collecteth not the relics!
+We wilt prithee the unknown entity! Silence the beast, 'r becometh vanquish'd by t's pow'r. 
+Returneth to thy depths on the morrow and save us all!
+You rest and return to the cave..."
+CHARACTER_NAME = "Town Wizard"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -82,6 +115,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_2"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_3" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -101,8 +145,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "The Unknown is Coming. I know because my dolly told me.
+I always believe my dolly. . . She said you’re in [^t]big[^r] trouble if you don’t help us.
+You rest and return to the cave..."
+CHARACTER_NAME = "Little Girl"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -133,6 +179,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_3"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_4" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -152,8 +209,15 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "Oh dear, oh dear..
+Oh, hero, there you are!
+I beg to hurry with that cave and all. Last night I thought I saw a rat but it wasn't like any rat I've ever seen.
+I mean, I've seen many a rat. We have then all the time here at the tavern, and normally they're so adorab...
+Oh, um.. Ahem.
+Anyways, this one was all slimy and instead of a cute little rat tail it was this horrible tendril.
+I hope I never see another like it again!
+You rest and return to the cave..."
+CHARACTER_NAME = "Bar Maid"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -184,6 +248,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_4"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_5" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -203,8 +278,12 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "As you return many of the villagers are gathered in the tavern.
+They whisper of odd occurances in the shadows. Tentacles, slime, and a mysterious fog.
+You sense their unease.
+None bother you, but you can sense the one question on their minds...
+Will the hero save us in time?
+You rest and return to the caves..."
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -235,6 +314,18 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_5"]
+visible = false
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_6" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -254,8 +345,12 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "As the hero arrived, we celebrated with praise! Suspend our worries and darkest days!
+Rejoice, Rejoice! The Gods shall hear! The Hero of Suradrew. Shall save our Rears!
+Living here is like a continuous nightmare. A lucid dream, that we can all emotionally feel.
+Simultaneously screaming in silence. Asking for forgiveness, but the gods just ignored us.
+You feel refreshed and return to the caves..."
+CHARACTER_NAME = "Bard"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -286,6 +381,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_6"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_7" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -305,8 +411,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "The Creature has spoken to me! Our Days are numbered!! There’s no mortal.. Let alone a GOD!!! That can save us in these trying times! The End is NEAR!
+You get a restless night's sleep and return to the caves..."
+CHARACTER_NAME = "Town WIzard"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -337,6 +444,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_7"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_8" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -356,8 +474,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "“She said you are so close to winning the game. She really is rooting for you. She’s super happy you can hear her growl with joy"
+CHARACTER_NAME = "Little Girl"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -388,6 +506,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_8"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_9" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -407,8 +536,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
-CHARACTER_NAME = "Tavern Keep"
+DIALOG = "egalliv dehcterw siht edisni deppets uoy tnemom eht delaes saw htiaf ruoy .meht ot sselesu era uoy ecno uoy no skcab rieht nrut lliw ,gnitcetorp era uoy elpoep eht
+You get no rest as you flee to the caves..."
+CHARACTER_NAME = "Little Girl?"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
@@ -439,6 +569,17 @@ scroll_horizontal_enabled = false
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
 
+[node name="TextureRect" type="TextureRect" parent="day_9"]
+margin_left = 375.789
+margin_top = -399.574
+margin_right = 1875.79
+margin_bottom = 1600.43
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="day_10" type="Panel" parent="."]
 visible = false
 margin_left = 1.88776
@@ -458,7 +599,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Greetings adventurer"
+DIALOG = "You don't return to the town, leaving any relics you had at the cave entrance."
 CHARACTER_NAME = "Tavern Keep"
 FONT = "res://assets/fonts/jamfont_regular.tres"
 ADVANCE_ACTION = "interact"
@@ -489,3 +630,91 @@ scroll_horizontal_enabled = false
 [node name="Control" type="Control" parent="day_10/syndibox/ScrollContainer"]
 margin_right = 1.0
 rect_min_size = Vector2( 1, 0 )
+
+[node name="day_11" type="Panel" parent="."]
+visible = false
+margin_left = 3.77552
+margin_top = 798.518
+margin_right = 1023.78
+margin_bottom = 997.574
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="syndibox" type="ReferenceRect" parent="day_11"]
+margin_left = 35.0
+margin_top = 45.0
+margin_right = 991.0
+margin_bottom = 179.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "The tavern is empty.
+You hear their screams but the damned dwell no more in this town.
+The tendrils of chaos weave their way through the empty buildings occupying the space where people once lived.
+A fog besets itself upon you as you feel your eyes get heavy and your movements slow.
+The fog gets heavier as the town disappears behind it.
+You drift to sleep to a fate unknown.
+You never wake again."
+CHARACTER_NAME = "Tavern Keep"
+FONT = "res://assets/fonts/jamfont_regular.tres"
+ADVANCE_ACTION = "interact"
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Sprite" type="Sprite" parent="day_11/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label" type="Label" parent="day_11/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer" type="Timer" parent="day_11/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="day_11/syndibox"]
+volume_db = -6.0
+
+[node name="Tween" type="Tween" parent="day_11/syndibox"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="day_11/syndibox"]
+margin_right = 2.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_11/syndibox/ScrollContainer"]
+margin_right = 1.0
+rect_min_size = Vector2( 1, 0 )
+
+[node name="Node" type="Node" parent="day_11/syndibox"]
+script = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="day_11/syndibox"]
+position = Vector2( 5, 5 )
+centered = false
+
+[node name="Label2" type="Label" parent="day_11/syndibox"]
+margin_left = 16.0
+margin_top = -38.0
+margin_right = 16.0
+margin_bottom = -38.0
+
+[node name="Timer2" type="Timer" parent="day_11/syndibox"]
+wait_time = 0.03
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="day_11/syndibox"]
+volume_db = -6.0
+
+[node name="Tween2" type="Tween" parent="day_11/syndibox"]
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="day_11/syndibox"]
+margin_right = 958.0
+margin_bottom = 134.0
+scroll_horizontal_enabled = false
+
+[node name="Control" type="Control" parent="day_11/syndibox/ScrollContainer2"]
+margin_right = 957.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 957, 134 )

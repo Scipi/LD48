@@ -5,8 +5,16 @@ var rng = RandomNumberGenerator.new()
 var tavern = preload("res://levels/tavern.tscn")
 
 var levels = [
-	preload("res://levels/demo_tiles.tscn"),
-	preload("res://levels/demo_tiles_2.tscn")
+	preload("res://levels/Level_1.tscn"),
+	preload("res://levels/Level_2.tscn"),
+	preload("res://levels/Level_3.tscn"),
+	preload("res://levels/Level_1.tscn"),
+	preload("res://levels/Level_2.tscn"),
+	preload("res://levels/Level_3.tscn"),
+	preload("res://levels/Level_1.tscn"),
+	preload("res://levels/Level_2.tscn"),
+	preload("res://levels/Level_3.tscn"),
+	preload("res://levels/Level_2.tscn"),
 ]
 
 var artifacts = [
@@ -77,6 +85,7 @@ func instantiate_level(level_index, ascent):
 func ascend():
 	level_index -= 1
 	if level_index < 0:
+		$CanvasLayer/gui.hide()
 		stop_all_music()
 		day += 1
 		current_level.queue_free()
@@ -89,6 +98,7 @@ func ascend():
 	instantiate_level(level_index, true)
 
 func descend():
+	$CanvasLayer/gui.show()
 	level_index += 1
 	if level_index >= len(levels):
 		level_index = len(levels)-1

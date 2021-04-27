@@ -34,6 +34,9 @@ func init(rng: RandomNumberGenerator, is_ascent, relic, day):
 	for s in $descent_spawns.get_children():
 		var i = rng.randi_range(0, len(descent_enemies)-1)
 		var e = descent_enemies[i].instance()
+		if is_ascent:
+			i = rng.randi_range(0, len(ascent_enemies)-1)
+			e = ascent_enemies[i].instance()
 		
 		$Navigation.add_child(e)
 		e.global_transform = s.global_transform

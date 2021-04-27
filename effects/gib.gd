@@ -6,10 +6,14 @@ export var drag = 0.01
 export var velo_retained_on_bounce = 0.8
 var velocity = Vector3.ZERO
 var initialized = false
+onready var gibs = [$GibChunk1, $GibChunk2, $GibChunk3]
 
 func init():
+	randomize()
 	initialized = true
 	velocity = -global_transform.basis.y * start_move_speed
+	gibs.shuffle()
+	gibs[0].show()
 
 func _physics_process(delta):
 	if !initialized:

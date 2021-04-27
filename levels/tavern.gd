@@ -33,7 +33,16 @@ func init(day, num_artifacts_collected):
 		10:
 			$day_10.show()
 			$day_10/syndibox.connect("text_finished", self, "return_to_caves")
-		
+		11:
+			$day_11.show()
+			$day_11/syndibox.connect("text_finished", self, "end_game")
+
+func end_game():
+	get_tree().quit(0)
+
+func _input(event):
+	if event.is_action_pressed("quit"):
+		get_tree().quit(0)
 
 func return_to_caves():
 	var lm = get_tree().get_nodes_in_group("level_manager")[0]

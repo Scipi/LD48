@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://pickups/pickup.gd" type="Script" id=1]
+[ext_resource path="res://assets/meshes/pickups/Potion_Bottle.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 0.002
@@ -34,8 +35,6 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 120, 0 ), Vector3( 0, 240, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[sub_resource type="CubeMesh" id=3]
-
 [node name="health_pickup" type="Area"]
 collision_layer = 8
 collision_mask = 0
@@ -52,7 +51,5 @@ anims/spin = SubResource( 2 )
 [node name="graphics" type="Spatial" parent="."]
 transform = Transform( 0.323466, 0, 0.94624, 0, 1, 0, -0.94624, 0, 0.323466, 0, 0.423377, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="graphics"]
-transform = Transform( 0.320505, 0, 0, 0, 0.320505, 0, 0, 0, 0.320505, 0, 0, 0 )
-mesh = SubResource( 3 )
-material/0 = null
+[node name="Potion_Bottle" parent="graphics" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )

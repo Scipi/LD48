@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://characters/character_mover.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/meshes/enemies/Golem_D.png" type="Texture" id=2]
 [ext_resource path="res://characters/health_manager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://characters/hitbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://weapons/damage_area.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/enemies/enemy.gd" type="Script" id=6]
 [ext_resource path="res://characters/enemies/aim_at_object.gd" type="Script" id=7]
@@ -12,25 +12,8 @@
 radius = 0.849004
 height = 1.43633
 
-[sub_resource type="CapsuleShape" id=14]
-radius = 0.250195
-height = 0.664816
-
-[sub_resource type="CapsuleShape" id=15]
-radius = 0.231035
-height = 0.798104
-
-[sub_resource type="CapsuleShape" id=12]
-radius = 2.82738
-height = 7.40049
-
-[sub_resource type="CapsuleShape" id=16]
-radius = 2.82738
-height = 7.40049
-
-[sub_resource type="CapsuleShape" id=17]
-radius = 0.636329
-height = 0.120112
+[sub_resource type="SpatialMaterial" id=23]
+albedo_texture = ExtResource( 2 )
 
 [node name="lesser_golem" type="KinematicBody"]
 collision_layer = 2
@@ -44,68 +27,6 @@ walk_anim_speed_mod = 2.5
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.57825, -0.0572081 )
 shape = SubResource( 22 )
-
-[node name="graphics" parent="." instance=ExtResource( 8 )]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
-
-[node name="BoneAttachment" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="1"]
-transform = Transform( -0.000403673, 0.000207864, -1, 0.476387, 0.879236, -9.41809e-06, 0.879236, -0.476387, -0.000453955, -8.04297, 0.184396, -20.5273 )
-bone_name = "Right_Hip"
-
-[node name="hitbox" parent="graphics/Armature/Skeleton/BoneAttachment" instance=ExtResource( 4 )]
-transform = Transform( 1.02533, 9.94727, 0.0115973, -9.94729, 1.02533, 0.00544399, 0.00422677, -0.0120949, 9.99998, 6.13575, -0.26907, 0.455631 )
-
-[node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment/hitbox"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 14 )
-disabled = true
-
-[node name="BoneAttachment2" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="2"]
-transform = Transform( 0.00183084, -0.000665564, -0.999998, 0.461606, 0.886721, 0.000256061, 0.886227, -0.461861, 0.00193257, 7.64576, 0.184395, -20.5273 )
-bone_name = "Left_Hip"
-
-[node name="hitbox2" parent="graphics/Armature/Skeleton/BoneAttachment2" instance=ExtResource( 4 )]
-transform = Transform( -0.793591, -9.93413, -0.935991, 6.18483, -1.22642, 7.75657, -7.80541, 0.0366672, 6.24188, 5.84767, 0.209772, -0.655853 )
-
-[node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment2/hitbox2"]
-transform = Transform( 1, 5.96046e-08, 0, -5.96046e-08, -8.9407e-08, -1, -2.98023e-08, 1, -1.19209e-07, -0.0405109, 0.000252843, 0.032366 )
-shape = SubResource( 15 )
-disabled = true
-
-[node name="BoneAttachment3" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="3"]
-transform = Transform( -0.000373867, -0.000257558, -1, -0.549929, 0.835211, -9.39012e-06, 0.835211, 0.549929, -0.000453904, -8.04781, 5.90459, -9.96997 )
-bone_name = "Right_Foot"
-
-[node name="hitbox" parent="graphics/Armature/Skeleton/BoneAttachment3" instance=ExtResource( 4 )]
-
-[node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment3/hitbox"]
-transform = Transform( 0.0766675, 0.000382774, -0.997057, -0.997056, 0.00124173, -0.076667, 0.00120881, 1, 0.000476838, 6.19692, -1.70694, -0.905592 )
-shape = SubResource( 12 )
-disabled = true
-
-[node name="BoneAttachment4" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="4"]
-transform = Transform( 0.00145027, -0.00129779, 0.999998, -0.560799, -0.827562, -0.000261791, 0.827552, -0.560244, -0.00192988, 7.66757, 5.68806, -9.96072 )
-bone_name = "Left_Foot"
-
-[node name="hitbox" parent="graphics/Armature/Skeleton/BoneAttachment4" instance=ExtResource( 4 )]
-
-[node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment4/hitbox"]
-transform = Transform( 0.0766675, 0.000382774, -0.997057, -0.997056, 0.00124173, -0.076667, 0.00120881, 1, 0.000476838, 6.19692, -1.70694, -0.905592 )
-shape = SubResource( 16 )
-disabled = true
-
-[node name="BoneAttachment5" type="BoneAttachment" parent="graphics/Armature/Skeleton" index="5"]
-transform = Transform( 0.0177883, 0.000571073, -0.999842, 0.999326, 0.0321018, 0.0177976, 0.0321069, -0.999485, 3.55093e-07, -0.604545, 0.383483, -20.7063 )
-bone_name = "Head_Center"
-
-[node name="hitbox3" parent="graphics/Armature/Skeleton/BoneAttachment5" instance=ExtResource( 4 )]
-transform = Transform( 10, -2.38419e-07, 2.98023e-08, -7.45058e-08, -1.19582e-06, 10, -3.57628e-07, -10, -1.1865e-06, 2.20781, 0.370188, -0.852492 )
-weak_spot = true
-
-[node name="CollisionShape" type="CollisionShape" parent="graphics/Armature/Skeleton/BoneAttachment5/hitbox3"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 17 )
-disabled = true
 
 [node name="character_mover" parent="." instance=ExtResource( 1 )]
 move_accel = 2
@@ -127,9 +48,12 @@ script = ExtResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.943975 )
 damage = 5
 
+[node name="graphics" parent="." instance=ExtResource( 8 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+
+[node name="pCube6" parent="graphics/Armature/Skeleton" index="0"]
+material/0 = SubResource( 23 )
+
 [connection signal="attack" from="." to="aim_at_object/damage_area" method="fire"]
 
 [editable path="graphics"]
-[editable path="graphics/Armature/Skeleton/BoneAttachment/hitbox"]
-[editable path="graphics/Armature/Skeleton/BoneAttachment2/hitbox2"]
-[editable path="graphics/Armature/Skeleton/BoneAttachment5/hitbox3"]
