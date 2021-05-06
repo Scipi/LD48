@@ -39,7 +39,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DIALOG = "Doom is at hand. That is what the oracles say and the oracles are never wrong.
+DIALOG = "Doom is at hand. That is what the oracles say and the oracles are never wrong. (Press E to continue)
 In 7 days ruin will come to our lands by a being that none can stop.
 But there is salvation.
  It is said that in the caves near our village there lies 10 otherworldly artifacts with the power to stave off doom.

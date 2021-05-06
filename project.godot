@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LD48"
-run/main_scene="res://levels/level_manager.tscn"
+run/main_scene="res://main_menu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -106,6 +106,13 @@ interact={
 3d_physics/layer_4="pickups"
 3d_physics/layer_5="player"
 
+[physics]
+
+3d/active_soft_world=false
+common/enable_object_picking=false
+
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=3
+threads/thread_model=2
 environment/default_environment="res://default_env.tres"

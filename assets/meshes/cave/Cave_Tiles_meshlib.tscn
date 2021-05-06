@@ -192,7 +192,7 @@ data = PoolVector3Array( -5, 2.5, 5, -5, 5, -5, -5, 5, 5, -5, 5, -5, -5, 2.5, 5,
 [node name="RootNode" type="Spatial"]
 
 [node name="Wall" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1923, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1546, 0.31819, -0.516834 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 

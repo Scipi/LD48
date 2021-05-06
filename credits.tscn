@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/gui_menu.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/jamfont_regular.tres" type="DynamicFont" id=2]
+[ext_resource path="res://credits.gd" type="Script" id=3]
+
+[node name="credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.890869
+margin_bottom = 0.890869
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Programming and Project Lead
+Scipi
+
+3D Art
+PixelPlayToy
+MothmanVT
+
+Level Design
+MothManVT
+
+2D Art
+Skeletiano
+Salty
+
+Music and Sound Effects
+Keegan le Serg
+
+Story
+ModdieFox[/center]"
+text = "Programming and Project Lead
+Scipi
+
+3D Art
+PixelPlayToy
+MothmanVT
+
+Level Design
+MothManVT
+
+2D Art
+Skeletiano
+Salty
+
+Music and Sound Effects
+Keegan le Serg
+
+Story
+ModdieFox"
+fit_content_height = true
+scroll_active = false
+
+[node name="back_button" type="Button" parent="."]
+margin_left = 26.0678
+margin_top = 26.0678
+margin_right = 92.0678
+margin_bottom = 56.0678
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="back_button" to="." method="back"]
